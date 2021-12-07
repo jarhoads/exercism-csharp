@@ -30,11 +30,12 @@ public static class PlayAnalyzer
         }
         else if (report is Incident incident)
         {
-            return $"{incident.GetDescription()}";
+            return (incident is Injury injury) ? $"Oh no! {incident.GetDescription()} Medics are on the field." : 
+                                                 $"{incident.GetDescription()}";
         }
         else if (report is Manager manager)
         {
-            return $"{manager}";
+            return string.IsNullOrWhiteSpace(manager.Club) ? $"{manager.Name}" : $"{manager.Name} ({manager.Club})";
         }
         else
         {

@@ -9,8 +9,6 @@
         this.Name = name;
         this.Club = club ?? "";
     }
-
-    public override string ToString() => string.IsNullOrWhiteSpace(Club) ? $"{Name}" : $"{Name} ({Club})";
 }
 
 public class Incident
@@ -32,5 +30,5 @@ public class Injury : Incident
         this.player = player;
     }
 
-    public override string GetDescription() => $"Oh no! Player {player} is injured. Medics are on the field.";
+    public override string GetDescription() => $"Player {player} is injured.";
 }
